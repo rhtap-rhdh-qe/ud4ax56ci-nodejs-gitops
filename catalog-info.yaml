@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ud4ax56ci-nodejs-gitops
+  description: This is GitOps manifest for ud4ax56ci-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=ud4ax56ci-nodejs
+    backstage.io/kubernetes-id: ud4ax56ci-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: ud4ax56ci-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ud4ax56ci-nodejs
